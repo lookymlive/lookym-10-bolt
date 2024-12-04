@@ -73,13 +73,14 @@ export function UploadForm() {
                 <FormLabel>Video</FormLabel>
                 <FormControl>
                   <Input
+                    className="file:bg-transparent"
                     type="file"
                     accept="video/*"
                     onChange={(e) => {
                       const file = e.target.files?.[0];
                       if (file) onChange(file);
                     }}
-                    {...field}
+                    value={field.value?.name || ''}
                   />
                 </FormControl>
                 <FormMessage />
@@ -95,6 +96,7 @@ export function UploadForm() {
                 <FormLabel>Thumbnail</FormLabel>
                 <FormControl>
                   <Input
+                    className="file:bg-transparent"
                     type="file"
                     accept="image/*"
                     onChange={(e) => {
@@ -108,7 +110,7 @@ export function UploadForm() {
                         reader.readAsDataURL(file);
                       }
                     }}
-                    {...field}
+                    value={field.value?.name || ''}
                   />
                 </FormControl>
                 <FormMessage />

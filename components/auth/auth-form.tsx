@@ -61,7 +61,11 @@ export function AuthForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input 
+                    placeholder="John Doe" 
+                    autoComplete="name"
+                    {...field} 
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -75,7 +79,11 @@ export function AuthForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="example@email.com" {...field} />
+                <Input 
+                  placeholder="example@email.com" 
+                  autoComplete="email"
+                  {...field} 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -88,7 +96,11 @@ export function AuthForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="password" {...field} />
+                <Input 
+                  type="password" 
+                  autoComplete={isSignUp ? "new-password" : "current-password"}
+                  {...field} 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
